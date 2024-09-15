@@ -19,6 +19,20 @@
 
 `src/main.rs`: 为编写应用代码的地方
 
+## dependencies
+`crates`: https://crates.io/
+
+1.Cargo.toml中添加
+```rust
+[dependencies]
+ferris-says = "0.2"
+```
+
+2.`cargo build`:生成`Cargo.lock`-该文件记录了本地所用依赖库的精确版本
+
+3.引用：
+`use ferris_says::say;`
+
 
 
 
