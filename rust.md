@@ -1,4 +1,10 @@
+## 学习资料
+https://doc.rust-lang.org/book/
+
+
 `rustup update`:获取最新版本的 Rust
+
+`rustup self uninstall`:卸载
 
 `cargo --version`:要检查您是否安装了 Rust 和 Cargo，可以在终端中运行
 
