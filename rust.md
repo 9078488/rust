@@ -12,6 +12,11 @@
 
 `cargo publish`: 可以将库发布到 crates.io。
 
+## 创建新项目
+`cargo new``cargo new hello-rust`
+`Cargo.toml`:为 Rust 的清单文件。其中包含了项目的元数据和依赖库
+`src/main.rs`: 为编写应用代码的地方
+
 
 
 
