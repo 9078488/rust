@@ -39,6 +39,11 @@ ferris-says = "0.2"
 3.引用：
 `use ferris_says::say;`
 
+### Anatomy of a Rust Program
+```rust
+fn main() {
 
+}
+```
 
 
