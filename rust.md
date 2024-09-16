@@ -18,7 +18,9 @@ https://doc.rust-lang.org/book/
 
 `cargo publish`: 可以将库发布到 crates.io。
 
-`cargo check`: This command quickly checks your code to make sure it compiles but doesn’t produce an executable:
+`cargo check`: This command quickly checks your code to make sure it compiles but doesn’t produce an executable
+
+`cargo build --release`:When your project is finally ready for release, you can use cargo build --release to compile it with optimizations
 
 ## 创建新项目
 `cargo new``cargo new hello-rust`
