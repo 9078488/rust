@@ -10,7 +10,7 @@ https://doc.rust-lang.org/book/
 
 `cargo build`: 可以构建项目
 
-`cargo run`: 可以运行项目
+`cargo run`: 可以运行项目:build and run a project in one step
 
 `cargo test`: 可以测试项目
 
