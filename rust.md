@@ -1,5 +1,5 @@
 ## 学习资料
-https://doc.rust-lang.org/book/
+[https://doc.rust-lang.org/book/](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
 
 
 `rustup update`:获取最新版本的 Rust
