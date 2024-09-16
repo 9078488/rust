@@ -18,6 +18,8 @@ https://doc.rust-lang.org/book/
 
 `cargo publish`: 可以将库发布到 crates.io。
 
+`cargo check`: This command quickly checks your code to make sure it compiles but doesn’t produce an executable:
+
 ## 创建新项目
 `cargo new``cargo new hello-rust`
 
@@ -51,6 +53,9 @@ The `main` function is special: it is always the first code that runs in every e
 https://doc.rust-lang.org/book/appendix-04-useful-development-tools.html
 `rustc`
 
+
+### rustc main.rs
+是 Rust 编译器的命令，用于编译一个名为 main.rs 的 Rust 源文件
 
 `println!`:For now, you just need to know that using a ! means that you’re calling a macro instead of a normal function and that macros don’t always follow the same rules as functions.
 
