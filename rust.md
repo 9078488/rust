@@ -47,4 +47,5 @@ fn main() {
 ```
 The `main` function is special: it is always the first code that runs in every executable Rust program
 
-
+### rustfmt
+https://doc.rust-lang.org/book/appendix-04-useful-development-tools.html
