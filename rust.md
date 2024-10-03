@@ -62,3 +62,10 @@ https://doc.rust-lang.org/book/appendix-04-useful-development-tools.html
 `println!`:For now, you just need to know that using a ! means that you’re calling a macro instead of a normal function and that macros don’t always follow the same rules as functions.
 
 Rust style is to indent with four spaces, not a tab.
+
+
+### 零散知识点
+`println!`
+` println!("The value x is {x}");`
+
+`let` `let mut x = 5;`
