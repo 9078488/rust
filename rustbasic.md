@@ -52,18 +52,89 @@ fn main() {
    
 2. Floating-Point Types
 
+   Rust’s floating-point types are `f32` and `f64`
+
+   The default type is `f64`
+
+   ```
+   fn main() {
+    let x = 2.0; // f64
+
+    let y: f32 = 3.0; // f32
+    }
+   ```
+   
 3. The Boolean Type
+   
+   ```
+   fn main() {
+    let t = true;
 
+    let f: bool = false; // with explicit type annotation
+    }
+   ```
 4. The Character Type
+   > Note that we specify `char` literals with `single quotes`,as opposed to `string literals`
 
-56. Numeric Operations
+   `char`
+
+   ```
+   fn main() {
+    let c = 'z';
+    let z: char = 'ℤ'; // with explicit type annotation
+    let heart_eyed_cat = '😻';
+    }
+   ```
+
+
+5. Numeric Operations
+   ```
+   fn main() {
+    // addition
+    let sum = 5 + 10;
+
+    // subtraction
+    let difference = 95.5 - 4.3;
+
+    // multiplication
+    let product = 4 * 30;
+
+    // division
+    let quotient = 56.7 / 32.2;
+    // Integer division truncates toward zero to the nearest integer
+    let truncated = -5 / 3; // Results in -1
+
+    // remainder
+    let remainder = 43 % 5;
+    }
+   ```  
 
 ###  compound Types
 1. The Tuple Type
 
-2. The Array Type
+   `Tuples` have a `fixed length`: once declared, they cannot grow or shrink in size.
 
-3. 
+   ```
+   fn main() {
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    }
+   ```
+
+   To get the individual values out of a tuple:
+
+   ```
+   fn main() {
+    let tup = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+
+    println!("The value of y is: {y}");
+    }
+   ```
+   
+3. The Array Type
+
+4. 
 ## 3.3. Functions
 ## 3.4. Comments
 ## 3.5. Control Flow
