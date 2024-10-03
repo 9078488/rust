@@ -69,3 +69,5 @@ Rust style is to indent with four spaces, not a tab.
 ` println!("The value x is {x}");`
 
 `let` `let mut x = 5;`
+
+`string.len();`
