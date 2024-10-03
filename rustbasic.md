@@ -8,6 +8,34 @@ Introduction
 # 2. Programming a Guessing Game
 # 3. Common Programming Concepts
 ## 3.1. Variables and Mutability
+### 1.`mut`
+
+`let x = 5;`   `let mut x = 5;`
+
+### 2.`constant`
+
+
+`const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;`
+
+name convention:`THREE_HOURS_IN_SECONDS`
+
+### 3.Shadowing
+> shadowing可以相同名字不同数据类型
+```
+fn main() {
+    let x = 5;
+
+    let x = x + 1;
+
+    {
+        let x = x * 2;
+        println!("The value of x in the inner scope is: {x}");
+    }
+
+    println!("The value of x is: {x}");
+}
+```
+
 ## 3.2. Data Types
 ## 3.3. Functions
 ## 3.4. Comments
