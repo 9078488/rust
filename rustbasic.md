@@ -1,3 +1,5 @@
+> https://doc.rust-lang.org/book/ch03-03-how-functions-work.html
+
 The Rust Programming Language
 Foreword
 Introduction
@@ -131,10 +133,52 @@ fn main() {
     println!("The value of y is: {y}");
     }
    ```
+
+   access a tuple element directly by using a period (.) 
+
+   ```
+   fn main() {
+    let x: (i32, f64, u8) = (500, 6.4, 1);
+
+    let five_hundred = x.0;
+
+    let six_point_four = x.1;
+
+    let one = x.2;
+    }      
+   ```
+
+   空元组（`Unit`）
+   
+   表示方式: 空元组用 `()` 表示,它类似于其他语言中的 null 或 void
+
+   类型: 空元组的类型也是 `()`
    
 3. The Array Type
 
-4. 
+   > every element of an `array` must have the `same type`
+   > An `array` isn’t as flexible,have a `fixed number of elements`
+   > 类似类型`vector`元素数量可变
+   
+
+   ```
+   fn main() {
+    let a = [1, 2, 3, 4, 5];
+    }
+   ```
+
+   `let a: [i32; 5] = [1, 2, 3, 4, 5];`
+
+   `let a = [3; 5];`: 这行代码定义了一个数组 a，并将其初始化为包含 5 个元素的数组，每个元素的值都是 3。
+
+    ```
+    fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    let first = a[0];
+    let second = a[1];
+    }
+    ```
 ## 3.3. Functions
 ## 3.4. Comments
 ## 3.5. Control Flow
