@@ -37,6 +37,9 @@ fn main() {
 ## 3.2. Data Types
 ### Scalar Types
 1. Integer Types
+   
+   Rust’s defaults are generally good places to start: integer types default to `i32`
+   
    ```
    Length	Signed	Unsigned
     8-bit	i8	    u8
@@ -46,13 +49,14 @@ fn main() {
     128-bit	i128	u128
     arch	isize	usize
    ```
+   
 2. Floating-Point Types
 
 3. The Boolean Type
 
 4. The Character Type
 
-5. Numeric Operations
+56. Numeric Operations
 
 ###  compound Types
 1. The Tuple Type
