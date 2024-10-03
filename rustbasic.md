@@ -8,17 +8,17 @@ Introduction
 # 2. Programming a Guessing Game
 # 3. Common Programming Concepts
 ## 3.1. Variables and Mutability
-### 1.`mut`
+### `mut`
 
 `let x = 5;`   `let mut x = 5;`
 
-### 2.`constant`
+### `constant`
 
 `const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;`
 
 name convention:`THREE_HOURS_IN_SECONDS`
 
-### 3.Shadowing
+### Shadowing
 > shadowing可以相同名字不同数据类型
 ```
 fn main() {
@@ -34,8 +34,32 @@ fn main() {
     println!("The value of x is: {x}");
 }
 ```
-
 ## 3.2. Data Types
+### Scalar Types
+1. Integer Types
+   ```
+   Length	Signed	Unsigned
+    8-bit	i8	    u8
+    16-bit	i16	    u16
+    32-bit	i32	    u32
+    64-bit	i64	    u64
+    128-bit	i128	u128
+    arch	isize	usize
+   ```
+2. Floating-Point Types
+
+3. The Boolean Type
+
+4. The Character Type
+
+5. Numeric Operations
+
+###  compound Types
+1. The Tuple Type
+
+2. The Array Type
+
+3. 
 ## 3.3. Functions
 ## 3.4. Comments
 ## 3.5. Control Flow
