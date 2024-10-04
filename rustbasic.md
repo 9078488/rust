@@ -180,6 +180,60 @@ fn main() {
     }
     ```
 ## 3.3. Functions
+`main` function: the entry point of many programs
+
+name convention: `another_function`
+
+```
+fn main() {
+    println!("Hello world!");
+
+    first_function();
+
+    second_function(5, 'y');
+
+    let x = third_function();
+    println!("{x}");
+
+    let y = fourth_function(6);
+    println!("{y}");
+
+    let z = fifth_function(7);
+    println!("{z}");
+}
+
+fn first_function() {
+    println!("another");
+}
+
+fn second_function(value: i32, uint_label: char) {
+    println!("The measurement is: {value}{uint_label}");
+}
+
+fn third_function() -> i32 {
+    5      //后面没有 ；
+}
+
+fn fourth_function(x: i32) -> i32 {
+    x + 1 //后面没有 ；
+}
+
+fn fifth_function(x: i32) -> i32 {
+    if x < 0 {
+        return 0;
+    }
+
+    if x > 10 {
+        return 10;
+    }
+
+    x
+}
+```
+statement：`let y = 6;`   Statements do not return values,therefore, you can’t assign a let statement to another variable
+
+expression: `x + 1`
+
 ## 3.4. Comments
 ## 3.5. Control Flow
 # 4. Understanding Ownership
