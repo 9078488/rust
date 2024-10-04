@@ -289,6 +289,21 @@ fn main() {
 }
 ```
 
+4.第四类：`if`  +  `let`
+```
+fn main() {
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
+
+    println!("The value of number is: {number}");
+}
+```
+
+4.第四类：`match`
+
+其他章节会详细讲解，类似于`if    else if   else`，但看上去更简洁
+```
+
 # 4. Understanding Ownership
 ## 4.1. What is Ownership?
 ## 4.2. References and Borrowing
