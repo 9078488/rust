@@ -235,7 +235,60 @@ statement：`let y = 6;`   Statements do not return values,therefore, you can’
 expression: `x + 1`
 
 ## 3.4. Comments
+```
+// It is a comment
+fn main() {
+    // It is a comment
+    println!("Hello world!");  // It is a comment
+
+}
+```
 ## 3.5. Control Flow
+### `if`
+
+> If the condition isn’t a bool, we’ll get an error.
+
+1.第一类
+```
+fn main() {
+    let number = 3;
+
+    if number < 5 {
+        println!("condition was true");
+    } 
+}
+```
+
+2.第二类
+```
+fn main() {
+    let number = 3;
+
+    if number < 5 {
+        println!("condition was true");
+    } else {
+        println!("condition was false");
+    }
+}
+```
+
+3.第三类
+```
+fn main() {
+    let number = 11;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    } else if number % 2 == 0 {
+        println!("number is divisible by 2");
+    } else {
+        println!("number is not divisible by 4, 3, or 2");
+    }
+}
+```
+
 # 4. Understanding Ownership
 ## 4.1. What is Ownership?
 ## 4.2. References and Borrowing
