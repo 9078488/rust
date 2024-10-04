@@ -248,7 +248,7 @@ fn main() {
 
 > If the condition isn’t a bool, we’ll get an error.
 
-1.第一类
+1.第一类:`if`
 ```
 fn main() {
     let number = 3;
@@ -259,7 +259,7 @@ fn main() {
 }
 ```
 
-2.第二类
+2.第二类:`if else`
 ```
 fn main() {
     let number = 3;
@@ -272,7 +272,7 @@ fn main() {
 }
 ```
 
-3.第三类
+3.第三类:`if    else if   else`
 ```
 fn main() {
     let number = 11;
