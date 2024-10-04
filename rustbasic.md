@@ -293,16 +293,72 @@ fn main() {
 ```
 fn main() {
     let condition = true;
-    let number = if condition { 5 } else { 6 };
+    let number = if condition { 5 } else { 6 };   //  { 5 } 与 { 6 } 必须是同一个数据类型
 
     println!("The value of number is: {number}");
 }
 ```
 
-4.第四类：`match`
+5.第五类：`match`
 
 其他章节会详细讲解，类似于`if    else if   else`，但看上去更简洁
 ```
+
+### `loop`
+1.第一类：无限`loop`
+```
+fn main() {
+    loop {
+        println!("again!");
+    }
+}
+```
+
+2.第二类： `loop` + `continue` or `break`
+
+3.第三类： `loop` 通过`break`去返回值
+```
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;   // 返回的值是counter * 2
+        }
+    };
+
+    println!("The result is {result}");
+}
+```
+
+4.第四类：`loop` + `label`
+
+```
+fn main() {
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+
+        count += 1;
+    }
+    println!("End count = {count}");
+}
+```
+
 
 # 4. Understanding Ownership
 ## 4.1. What is Ownership?
