@@ -1,4 +1,5 @@
-> https://doc.rust-lang.org/book/ch03-03-how-functions-work.html
+> The String Type
+> https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#ownership-rules
 
 The Rust Programming Language
 Foreword
@@ -302,7 +303,7 @@ fn main() {
 5.第五类：`match`
 
 其他章节会详细讲解，类似于`if    else if   else`，但看上去更简洁
-```
+
 
 ### `loop`
 1.第一类：无限`loop`
@@ -406,6 +407,70 @@ fn main() {
 }
 ```
 # 4. Understanding Ownership
+> Ownership is a set of rules that govern how a Rust program manages memory.
+
+> `Pushing` to the `stack` is `faster` than allocating on the `heap`
+> `Accessing` data in the `heap` is `slower` than accessing data on the `stack`
+
+> `stack`上的所有数据必须具有已知且固定的大小。在编译时大小未知或大小可能变化的数据必须存储在`heap`上
+## Stack & Heap
+### stack
+1.The stack stores values in the order it gets them and removes the values in the opposite order.
+
+2.` last in, first out`
+
+3.Think of a stack of plates: when you add more plates, you put them on top of the pile, and when you need a plate, you take one off the top.
+
+4.Adding data:` pushing onto`
+
+  removing data：` popping off `
+
+5.All data stored on the stack must have a known, fixed size
+
+### heap
+`allocating on the heap`
+
+指针：指向堆的指针是一个已知且固定大小的值，**因此可以存储在栈上**。当你需要实际数据时，你必须通过指针来访问它。
+
+## Ownership Rules
+### a.Each value in Rust has an owner.
+```
+fn main() {
+    let x = 42;  // x 是值 42 的所有者
+}
+```
+
+### b.There can only be one owner at a time
+```
+fn main() {
+    let x = String::from("hello");  // x 是字符串 "hello" 的所有者
+    let y = x;  // 所有权从 x 转移到 y
+    // 现在 y 是字符串 "hello" 的所有者，x 不再有效
+    // println!("{}", x);  // 这会导致编译错误，因为 x 不再有效
+}
+```
+
+
+### c.When the owner goes out of scope, the value will be dropped
+```
+fn main() {
+    {
+        let x = String::from("hello");  // x 是字符串 "hello" 的所有者
+        // x 在这里有效
+    }  // x 超出作用域，字符串 "hello" 被丢弃
+    // x 在这里不再有效
+}
+```
+
+## Variable Scope
+```
+    {                      // s is not valid here, it’s not yet declared
+        let s = "hello";   // s is valid from this point forward
+
+        // do stuff with s
+    }                      // this scope is now over, and s is no longer valid
+```
+
 ## 4.1. What is Ownership?
 ## 4.2. References and Borrowing
 ## 4.3. The Slice Type
