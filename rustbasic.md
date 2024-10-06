@@ -471,6 +471,23 @@ fn main() {
     }                      // this scope is now over, and s is no longer valid
 ```
 
+## The String Type
+`string literals`: 不可变，固定大小，可存储在`stack`
+
+`String`:          可变，非固定大小，可存储在`heap`
+
+```
+fn main() {
+    let mut s = String::from("hello");
+
+    s.push_str(",world!");
+
+    println!("{s}");
+}
+```
+
+> Variables and Data Interacting with Move
+
 ## 4.1. What is Ownership?
 ## 4.2. References and Borrowing
 ## 4.3. The Slice Type
