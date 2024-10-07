@@ -505,7 +505,21 @@ fn main() {
     println!("s1 = {s1}, s2 = {s2}!");
 }
 ```
+### `copy`
+> 任何一组简单的标量值都可以实现 Copy 特性
+> 而那些需要分配内存或涉及某种资源的类型则不能实现 Copy 特性
 
+以下是一些实现了 Copy 特性的类型：
+
+所有整数类型，如 `u32`。
+
+布尔类型 `bool`，其值为 `true` 和 `false`。
+
+所有浮点类型，如 `f64`。
+
+字符类型`char`。
+
+`元组`，如果它们只包含也实现了 Copy 特性的类型。例如，(i32, i32) 实现了 Copy，但 (i32, String) 没有。
 
 ## 4.2. References and Borrowing
 ## 4.3. The Slice Type
