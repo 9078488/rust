@@ -407,14 +407,15 @@ fn main() {
 }
 ```
 # 4. Understanding Ownership
+## What Is Ownership
 > Ownership is a set of rules that govern how a Rust program manages memory.
 
 > `Pushing` to the `stack` is `faster` than allocating on the `heap`
 > `Accessing` data in the `heap` is `slower` than accessing data on the `stack`
 
 > `stack`上的所有数据必须具有已知且固定的大小。在编译时大小未知或大小可能变化的数据必须存储在`heap`上
-## Stack & Heap
-### stack
+### Stack & Heap
+`stack`
 1.The stack stores values in the order it gets them and removes the values in the opposite order.
 
 2.` last in, first out`
@@ -427,20 +428,20 @@ fn main() {
 
 5.All data stored on the stack must have a known, fixed size
 
-### heap
+`heap`
 `allocating on the heap`
 
 指针：指向堆的指针是一个已知且固定大小的值，**因此可以存储在栈上**。当你需要实际数据时，你必须通过指针来访问它。
 
-## Ownership Rules
-### a.Each value in Rust has an owner.
+### Ownership Rules
+a.Each value in Rust has an owner.
 ```
 fn main() {
     let x = 42;  // x 是值 42 的所有者
 }
 ```
 
-### b.There can only be one owner at a time
+b.There can only be one owner at a time
 ```
 fn main() {
     let x = String::from("hello");  // x 是字符串 "hello" 的所有者
@@ -449,9 +450,7 @@ fn main() {
     // println!("{}", x);  // 这会导致编译错误，因为 x 不再有效
 }
 ```
-
-
-### c.When the owner goes out of scope, the value will be dropped
+c.When the owner goes out of scope, the value will be dropped
 ```
 fn main() {
     {
@@ -462,7 +461,7 @@ fn main() {
 }
 ```
 
-## Variable Scope
+### Variable Scope
 ```
     {                      // s is not valid here, it’s not yet declared
         let s = "hello";   // s is valid from this point forward
@@ -471,7 +470,7 @@ fn main() {
     }                      // this scope is now over, and s is no longer valid
 ```
 
-## The String Type
+### The String Type
 `string literals`: 不可变，固定大小，可存储在`stack`
 
 `String`:          可变，非固定大小，可存储在`heap`
@@ -486,7 +485,26 @@ fn main() {
 }
 ```
 
-> Variables and Data Interacting with Move
+### `move`
+```
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;
+
+    println!("{s1}, world!");
+}
+```
+> `let s2 = s1;`使得s1 `move` 到 s2,s1就失效，`println!("{s1}, world!");`就失效
+
+### `clone`
+```
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+
+    println!("s1 = {s1}, s2 = {s2}!");
+}
+```
 
 ## 4.1. What is Ownership?
 ## 4.2. References and Borrowing
