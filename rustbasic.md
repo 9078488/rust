@@ -407,7 +407,7 @@ fn main() {
 }
 ```
 # 4. Understanding Ownership
-## What Is Ownership
+## 4.1. What is Ownership?
 > Ownership is a set of rules that govern how a Rust program manages memory.
 
 > `Pushing` to the `stack` is `faster` than allocating on the `heap`
@@ -506,7 +506,7 @@ fn main() {
 }
 ```
 
-## 4.1. What is Ownership?
+
 ## 4.2. References and Borrowing
 ## 4.3. The Slice Type
 # 5. Using Structs to Structure Related Data
