@@ -1,5 +1,5 @@
-> The String Type
-> https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#ownership-rules
+
+> [https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#ownership-rules](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
 
 The Rust Programming Language
 Foreword
