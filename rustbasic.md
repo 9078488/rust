@@ -565,6 +565,78 @@ fn calculate_length(s: String) -> (String, usize) {
 ```
 
 ## 4.2. References and Borrowing
+> A `reference` is like a `pointer` in that it’s an address we can follow to access the data stored at that address;
+> that data is owned by some other variable.
+> Unlike a pointer, a `reference` is guaranteed to point to a valid value of a particular type for the life of that reference.
+
+### 基础款的reference
+- `&s1` 中 `&` 代表其是一个reference
+-  这种reference不能被修改
+```
+fn main() {
+    let s1 = String::from("hello");
+
+    let len = calculate_length(&s1);
+
+    println!("The length of '{s1}' is {len}.");
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+```
+
+### mutable reference
+- &mut代表mutable reference
+- mutable reference只能同时存在一个，否则就报错
+- 一个值存在inmutable reference，就不能同时存在mutable reference
+```
+fn main() {
+    let mut s = String::from("hello");
+
+    change(&mut s);
+}
+
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+```
+
+
+- reference `r1`,`r2`在被`println!("{r1} and {r2}");`使用后，就消失，这是因为Rust的借用规则确保了引用的生命周期在其最后一次使用后结束。
+```
+let mut s = String::from("hello");
+
+    let r1 = &s; // no problem
+    let r2 = &s; // no problem
+    println!("{r1} and {r2}");
+    // variables r1 and r2 will not be used after this point
+
+    let r3 = &mut s; // no problem
+    println!("{r3}");
+```
+### Dangling References
+- Dangling References案例
+```
+fn main() {
+    let reference_to_nothing = dangle();
+}
+
+fn dangle() -> &String {
+    let s = String::from("hello");
+
+    &s
+}
+```
+
+- 正确的解决方法
+```
+fn no_dangle() -> String {
+    let s = String::from("hello");
+
+    s
+}
+```
 ## 4.3. The Slice Type
 # 5. Using Structs to Structure Related Data
 ## 5.1. Defining and Instantiating Structs
