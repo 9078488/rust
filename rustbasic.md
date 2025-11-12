@@ -638,6 +638,31 @@ fn no_dangle() -> String {
 }
 ```
 ## 4.3. The Slice Type
+```
+let s = String::from("hello");
+
+let slice = &s[0..2];   
+let slice = &s[..2];
+```
+
+```
+let s = String::from("hello");
+
+let len = s.len();
+
+let slice = &s[3..len];
+let slice = &s[3..];
+```
+
+```
+let s = String::from("hello");
+
+let len = s.len();
+
+let slice = &s[0..len];
+let slice = &s[..];
+```
+学到With all this information in mind, let’s rewrite first_word to return a slice. The type that signifies “string slice” is written as &str:
 # 5. Using Structs to Structure Related Data
 ## 5.1. Defining and Instantiating Structs
 ## 5.2. An Example Program Using Structs
