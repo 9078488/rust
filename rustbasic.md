@@ -662,7 +662,11 @@ let len = s.len();
 let slice = &s[0..len];
 let slice = &s[..];
 ```
-学到With all this information in mind, let’s rewrite first_word to return a slice. The type that signifies “string slice” is written as &str:
+### String Literals as Slices
+
+```
+let s = "Hello, world!";   // s is immutable
+```
 # 5. Using Structs to Structure Related Data
 ## 5.1. Defining and Instantiating Structs
 ## 5.2. An Example Program Using Structs
