@@ -667,6 +667,8 @@ let slice = &s[..];
 ```
 let s = "Hello, world!";   // s is immutable
 ```
+
+Defining a function to take a string slice instead of a
 # 5. Using Structs to Structure Related Data
 ## 5.1. Defining and Instantiating Structs
 ## 5.2. An Example Program Using Structs
