@@ -693,6 +693,45 @@ struct User {
 }
 ```
 
+- immutable 
+```
+fn main() {
+    let user1 = User {                             // 默认的是immutable 
+        active: true,
+        username: String::from("someusername123"),
+        email: String::from("someone@example.com"),
+        sign_in_count: 1,
+    };
+}
+```
+
+- mutable
+
+```
+// Note that the entire instance must be mutable; Rust doesn’t allow us to mark only certain fields as mutable.
+fn main() {
+    let mut user1 = User {                                  // 加mut则变为mutable
+        active: true,
+        username: String::from("someusername123"),
+        email: String::from("someone@example.com"),
+        sign_in_count: 1,
+    };
+
+    user1.email = String::from("anotheremail@example.com"); // mutable就可重新赋值
+}
+```
+
+```
+fn build_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username: username,
+        email: email,
+        sign_in_count: 1,
+    }
+}
+```
+
 ## 5.1. Defining and Instantiating Structs
 ## 5.2. An Example Program Using Structs
 ## 5.3. Method Syntax
