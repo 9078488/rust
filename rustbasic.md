@@ -684,6 +684,15 @@ Defining a function to take a string slice instead of a
 
 - the pieces of a struct can be different types
 
+```
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+```
+
 ## 5.1. Defining and Instantiating Structs
 ## 5.2. An Example Program Using Structs
 ## 5.3. Method Syntax
