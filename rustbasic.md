@@ -680,6 +680,10 @@ assert_eq!(slice, &[2, 3]);
 
 Defining a function to take a string slice instead of a
 # 5. Using Structs to Structure Related Data
+### Defining and Instantiating Structs
+
+- the pieces of a struct can be different types
+
 ## 5.1. Defining and Instantiating Structs
 ## 5.2. An Example Program Using Structs
 ## 5.3. Method Syntax
