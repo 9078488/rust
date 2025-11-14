@@ -668,6 +668,16 @@ let slice = &s[..];
 let s = "Hello, world!";   // s is immutable
 ```
 
+### Other Slices
+
+```
+let a = [1, 2, 3, 4, 5];
+
+let slice = &a[1..3];
+
+assert_eq!(slice, &[2, 3]);
+```
+
 Defining a function to take a string slice instead of a
 # 5. Using Structs to Structure Related Data
 ## 5.1. Defining and Instantiating Structs
