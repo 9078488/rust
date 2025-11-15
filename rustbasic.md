@@ -843,6 +843,9 @@ fn main() {
     println!("rect1 is {rect1:?}");
 }
 ```
+
+Nice! It’s not the prettiest output, but it shows the values of all the fields for this instance, whi
+
 ## 5.3. Method Syntax
 # 6. Enums and Pattern Matching
 ## 6.1. Defining an Enum
