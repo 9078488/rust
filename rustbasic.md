@@ -772,6 +772,31 @@ fn main() {
 
 Rust 不允许“部分有效的 struct”
 
+### Using Tuple Structs Without Named Fields to Create Different Types
+
+```
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+fn main() {
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+}
+```
+
+```
+let Point(x, y, z) = origin;
+```
+
+### Unit-Like Structs Without Any Fields
+
+```
+struct AlwaysEqual;
+
+fn main() {
+    let subject = AlwaysEqual;
+}
+```
 
 ## 5.2. An Example Program Using Structs
 ## 5.3. Method Syntax
