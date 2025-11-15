@@ -758,6 +758,21 @@ fn main() {
 }
 ```
 
+```
+fn main() {
+    // --snip--
+    // The syntax .. specifies that the remaining fields not explicitly set should have the same value as the fields in the given instance
+
+    let user2 = User {
+        email: String::from("another@example.com"),
+        ..user1                                                    
+    };
+}
+```
+
+Rust 不允许“部分有效的 struct”
+
+
 ## 5.2. An Example Program Using Structs
 ## 5.3. Method Syntax
 # 6. Enums and Pattern Matching
