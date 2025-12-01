@@ -1,5 +1,5 @@
 
-https://doc.rust-lang.org/book/ch06-00-enums.html
+[https://doc.rust-lang.org/book/ch06-00-enums.html](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html)
 
 The Rust Programming Language
 Foreword
