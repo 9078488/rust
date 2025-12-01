@@ -1,5 +1,5 @@
 
-> [https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#ownership-rules](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+https://doc.rust-lang.org/book/ch06-00-enums.html
 
 The Rust Programming Language
 Foreword
@@ -840,13 +840,83 @@ fn main() {
         height: 50,
     };
 
-    println!("rect1 is {rect1:?}");
+    println!("rect1 is {rect1:?}");    // {:#?} instead of {:?},打印出来更好看
 }
 ```
 
-Nice! It’s not the prettiest output, but it shows the values of all the fields for this instance, whi
-
 ## 5.3. Method Syntax
+
+### Defining Methods
+
+```
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    fn width(&self) -> bool {
+        self.width > 0
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 0, 
+        height: 20,
+    };
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
+
+    let sq = Rectangle::square(3);
+
+    println!("The area of the rectangle is {} square pixels",
+    rect1.area()
+    );
+
+    if rect1.width() {
+        println!("The rectangle has nonzero width; it is  {}", rect1.width)
+    }
+
+    println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
+    println!("Can rect3 hold rect1? {}", rect3.can_hold(&rect1));
+
+    println!("{:?}", sq)
+}
+```
+
+when we follow rect1.width with parentheses, Rust knows we mean the method width. When we don’t use parentheses, Rust knows we mean the field width.
+
+In other words, if object is a pointer, `object->something()` is similar to `(*object).something()`.
+
+```
+以下是一样的
+p1.distance(&p2);
+(&p1).distance(&p2);
+```
+
 # 6. Enums and Pattern Matching
 ## 6.1. Defining an Enum
 ## 6.2. The match Control Flow Construct
