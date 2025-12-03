@@ -916,9 +916,15 @@ In other words, if object is a pointer, `object->something()` is similar to `(*o
 p1.distance(&p2);
 (&p1).distance(&p2);
 ```
-
 # 6. Enums and Pattern Matching
 ## 6.1. Defining an Enum
+```
+enum IpAddrKind {
+    V4,
+    V6,
+}
+```
+
 ## 6.2. The match Control Flow Construct
 ## 6.3. Concise Control Flow with if let
 # 7. Managing Growing Projects with Packages, Crates, and Modules
